@@ -52,6 +52,8 @@ explore: customer {}
 
 explore: day_of_week {}
 
+explore: Satya_Derived_Order_1 {}
+
 explore: demo_visits_data {
   join: users {
     type: left_outer
