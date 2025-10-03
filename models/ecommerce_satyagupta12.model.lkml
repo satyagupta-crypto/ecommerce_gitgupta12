@@ -8,12 +8,19 @@ datagroup: ecommerce_satyagupta12_default_datagroup {
   max_cache_age: "30 minutes"
 }
 
-datagroup: use_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+datagroup: user_datagroup {
+  # sql_trigger: SELECT COUNT(id) FROM users;;
   max_cache_age: "1 hour"
 }
 
+datagroup: orders_datagroup {
+  sql_trigger: SELECT COUNT(id) FROM orders;;
+  max_cache_age: "15 hours"
+
+}
+persist_with: orders_datagroup
 persist_with: ecommerce_satyagupta12_default_datagroup
+persist_with: user_datagroup
 
 explore: billion_orders {
   join: orders {
