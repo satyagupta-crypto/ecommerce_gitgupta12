@@ -5,7 +5,7 @@ include: "/views/**/*.view.lkml"
 
 datagroup: ecommerce_satyagupta12_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "30 minutes"
 }
 
 persist_with: ecommerce_satyagupta12_default_datagroup
