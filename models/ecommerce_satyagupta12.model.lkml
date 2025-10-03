@@ -4,8 +4,13 @@ connection: "thelook"
 include: "/views/**/*.view.lkml"
 
 datagroup: ecommerce_satyagupta12_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  sql_trigger: SELECT COUNT(id) FROM users;;
   max_cache_age: "30 minutes"
+}
+
+datagroup: use_datagroup {
+  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "1 hour"
 }
 
 persist_with: ecommerce_satyagupta12_default_datagroup
