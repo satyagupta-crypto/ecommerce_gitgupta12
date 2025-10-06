@@ -1,8 +1,8 @@
 
-view: satya_template_runner_2 {
+view: template_sql_runner_query_21 {
   derived_table: {
     sql: SELECT
-
+      id,
       first_name,
       last_name,
       age,
@@ -10,10 +10,12 @@ view: satya_template_runner_2 {
       state
       FROM
       users
-         WHERE {% condition users_location %} users.state {% endcondition %} ;
-    filter: users_location {
-    type: string
+
+      WHERE {% condition users_location %} users.state {% endcondition %} ;;
+
   }
+  filter: users_location {
+    type: string
   }
 
   measure: count {
@@ -53,7 +55,7 @@ view: satya_template_runner_2 {
 
   set: detail {
     fields: [
-
+        id,
   first_name,
   last_name,
   age,
