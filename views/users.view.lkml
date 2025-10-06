@@ -29,6 +29,14 @@ view: users {
     type: string
     sql: ${TABLE}.email ;;
   }
+
+  dimension: liquid_Training_1 {
+    type: string
+    sql: "{% assign my_variable = 8 %}
+      {{ my_variable | minus: 4 }}" ;;
+  }
+
+
   dimension: first_name {
     type: string
     sql: ${TABLE}.first_name ;;
