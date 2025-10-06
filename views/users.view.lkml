@@ -131,7 +131,4 @@ measure: average_user_age {
       <li> Is 'Users Country' field filtered: {{ users.country._is_filtered }} </li>
     </ul> ;;
   }
-
-
-
-}
+  }
